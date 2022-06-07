@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url("https://use.typekit.net/bza3vcv.css");
+
+        * {
+            font-family: "proxima-nova";
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="min-h-screen  flex flex-col flex-auto flex-shrink-0 antialiased bg-white">
+        <!-- topbar -->
+        <div class="bg-black w-full flex items-center justify-end  py-6 px-8 space-x-6 fixed z-50">
+            <a href="/" class="text-white font-bold mr-auto text-xl md:px-14">
+                Base admin
+            </a>
+            <button onclick="sideMenu()" class="hidden md:block">
+                <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            <div class="hidden md:block font-bold text-white">
+                <a href="#"
+                    class="px-3 py-2 hover:bg-white hover:text-black transition rounded-3xl duration-400 ease-in">
+                    Home
+                </a>
+            </div>
+            <div class="hidden md:block font-bold text-white">
+                <a href="#"
+                    class="px-3 py-2 hover:bg-white hover:text-black transition rounded-3xl duration-400 ease-in">
+                    About
+                </a>
+            </div>
+            <div class="hidden md:block font-bold text-white">
+                <a href="#"
+                    class="px-3 py-2 hover:bg-white hover:text-black transition rounded-3xl duration-400 ease-in">
+                    Contact
+                </a>
+            </div>
+
+            <button onclick="mobileMenu()" class="md:hidden">
+                <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+
+        </div>
+
+
+        <div id="sidebar" class="bg-black hidden md:fixed md:flex md:flex-col w-64 h-full">
+            <div class="overflow-y-auto overflow-x-hidden flex-grow">
+                <ul class="flex flex-col">
+                    <li>
+                        <div class="px-2 mt-28">
+                            <span class="text-md tracking-wide">
+
+
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Home
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Register
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Login
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Table
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Form
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Card
+                                    </a>
+                                </div>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- mobile menu -->
+        <div id="mobilebar" class="bg-black hidden fixed flex-col w-64 h-full">
+            <div class="overflow-y-auto overflow-x-hidden flex-grow">
+                <ul class="flex flex-col">
+                    <li>
+                        <div class="px-2 mt-28">
+                            <span class="text-md tracking-wide">
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Home
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Register
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Login
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Table
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Form
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="#"
+                                        class='px-5 transition capitalize duration-400 ease-in text-white hover:bg-white hover:text-[#040404E0] rounded-3xl relative flex flex-row items-center  h-11 focus:outline-none font-bold'>
+                                        Card
+                                    </a>
+                                </div>
+
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- mobile menu  -->
+
+
+        <div class="m-1 md:pl-64" id="mainContent">
+            <div class="px-5 pt-20">
+
+                <!-- main content -->
+                <div class="w-full p-4">
+
+
+                    <section class="md:p-4">
+                        <div class="w-full mx-auto bg-white shadow-lg rounded-sm border">
+                            <div class="md:p-3">
+                                <div class="overflow-x-auto">
+                                    <table class="w-full">
+                                        <thead class="text-xs font-semibold uppercase text-white bg-black">
+                                            <tr>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-center">Email</div>
+                                                </th>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-center">Spent</div>
+                                                </th>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-center">City</div>
+                                                </th>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-center">Country</div>
+                                                </th>
+                                                <th class="p-2 whitespace-nowrap">
+                                                    <div class="font-semibold text-center">Position</div>
+                                                </th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-sm divide-y divide-gray-100">
+                                            <tr>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">hariharan@gmail.com</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center font-medium text-green-500">$2,890.66
+                                                    </div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">Example</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-lg text-center">🇺🇸</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">Full Stack Web Developer</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">suku@gmail.com</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center font-medium text-green-500">$2,767.04
+                                                    </div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">Example</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-lg text-center">🇩🇪</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">UI Designer</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">kevinpeter@gmail.com</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center font-medium text-green-500">$2,996.00
+                                                    </div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">Example</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-lg text-center">🇫🇷</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">Backend Engineer</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">olga.s@cool.design</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center font-medium text-green-500">$1,220.66
+                                                    </div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">Example</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-lg text-center">🇮🇹</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">Data Scientist</div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">creator@gmail.com</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center font-medium text-green-500">$1,890.66
+                                                    </div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">Example</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-lg text-center">🇬🇧</div>
+                                                </td>
+                                                <td class="p-2 whitespace-nowrap">
+                                                    <div class="text-center">AI Engineer</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- main content -->
+            </div>
+        </div>
+
+
+    </div>
+    <script>
+        function sideMenu() {
+            var sidebar = document.getElementById('sidebar')
+            var main = document.getElementById('mainContent')
+            if (sidebar.classList.contains('md:fixed')) {
+                sidebar.classList.remove('md:fixed');
+                sidebar.classList.remove('md:hidden');
+                sidebar.classList.remove('md:flex');
+                sidebar.classList.remove('w-64');
+                sidebar.classList.add('transition');
+                sidebar.classList.add('ease-out');
+                sidebar.classList.add('duration-400');
+                main.classList.remove('md:pl-64');
+            } else {
+                sidebar.classList.add('md:fixed');
+                sidebar.classList.add('md:flex');
+                sidebar.classList.add('md:w-64');
+                sidebar.classList.add('transition');
+                sidebar.classList.add('ease-in');
+                sidebar.classList.add('duration-400');
+                main.classList.add('md:pl-64');
+            }
+        }
+
+        function mobileMenu() {
+            var sidebar = document.getElementById('mobilebar')
+            var main = document.getElementById('mainContent')
+            if (sidebar.classList.contains('hidden')) {
+                sidebar.classList.remove('hidden');
+                sidebar.classList.remove('flex');
+                sidebar.classList.add('md:hidden');
+                sidebar.classList.add('absolute');
+                sidebar.classList.add('ease-out');
+                sidebar.classList.add('duration-400');
+                // main.classList.remove('md:pl-64');
+            } else {
+                sidebar.classList.add('hidden');
+
+                sidebar.classList.add('transition');
+                sidebar.classList.add('ease-in');
+                sidebar.classList.add('duration-400');
+                // main.classList.add('md:pl-64');
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
